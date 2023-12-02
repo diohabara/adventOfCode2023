@@ -31,14 +31,8 @@ let turn_line_into_number (line : string) : int =
 
 let sum_of_numbers_in_string (filename : string) : int =
   let lines = read_lines filename in
-  let rec helper (lines : string list) (acc : int) : int =
-    match lines with
-    | [] -> acc
-    | h :: t ->
-        let number = turn_line_into_number h in
-        helper t (acc + number)
-  in
-  helper lines 0
+  let values = List.map turn_line_into_number lines in
+  List.fold_left (fun acc v -> acc + v) 0 values
 
 (* Part 2 *)
 
