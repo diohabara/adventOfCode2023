@@ -2,12 +2,14 @@ with import <nixpkgs> {};
 stdenv.mkDerivation {
   name = "adventOfCode2023";
   buildInputs = [
-    ocamlPackages.ocaml
+    ocamlPackages.base
     ocamlPackages.dune_3
     ocamlPackages.findlib
-    ocamlPackages.utop
-    ocamlPackages.odoc
+    ocamlPackages.ocaml
     ocamlPackages.ocaml-lsp
+    ocamlPackages.odoc
+    ocamlPackages.stdio
+    ocamlPackages.utop
     ocamlformat
   ];
   src = null;
